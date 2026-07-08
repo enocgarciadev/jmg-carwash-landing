@@ -1,4 +1,5 @@
 import { Car, Truck, Sparkles, ChevronRight } from 'lucide-react'
+import { Card } from '@/components/ui/card'
 import { useLanguage } from '../i18n/useLanguage'
 import type { TranslationKey } from '../i18n/messages'
 
@@ -94,9 +95,9 @@ export default function ServicesMenu() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, index) => (
-            <div
+            <Card
               key={index}
-              className="bg-card-bg rounded-2xl p-6 md:p-8 shadow-lg shadow-primary/5 border border-primary/5 hover:shadow-2xl hover:shadow-primary/15 transition-all duration-500 ease-out hover:-translate-y-3 cursor-pointer group flex flex-col active:scale-[0.98]"
+              className="bg-card rounded-2xl p-6 md:p-8 shadow-lg shadow-primary/5 border border-primary/5 ring-0 hover:shadow-2xl hover:shadow-primary/15 transition-all duration-500 ease-out hover:-translate-y-3 cursor-pointer group flex flex-col active:scale-[0.98]"
             >
               <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5 transition-all duration-500 ease-out group-hover:scale-110 group-hover:bg-accent/20">
                 <service.icon className="w-6 h-6 text-accent transition-transform duration-500 ease-out group-hover:scale-110" />
@@ -133,7 +134,7 @@ export default function ServicesMenu() {
                 {t('services.cta')}
                 <ChevronRight className="w-4 h-4 transition-transform duration-300 ease-out group-hover/link:translate-x-2" />
               </a>
-            </div>
+            </Card>
           ))}
         </div>
 

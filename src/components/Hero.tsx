@@ -1,4 +1,5 @@
 import { MapPin, Navigation } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 import { useLanguage } from '../i18n/useLanguage'
 
 export default function Hero() {
@@ -37,15 +38,21 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <a
-            href="https://www.google.com/maps/dir/?api=1&destination=6776+SW+117th+Ave%2C+Miami%2C+FL+33183"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-text-light px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl hover:shadow-accent/40 active:scale-95 cursor-pointer group"
+          <Button
+            variant="accent"
+            size="lg"
+            asChild
+            className="px-8 py-4 h-auto text-lg font-bold rounded-xl gap-2 group"
           >
-            <Navigation className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" />
-            {t('hero.cta')}
-          </a>
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=6776+SW+117th+Ave%2C+Miami%2C+FL+33183"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Navigation className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" />
+              {t('hero.cta')}
+            </a>
+          </Button>
         </div>
 
         <div className="mt-12 flex items-center justify-center gap-2 text-text-light/70 text-sm animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
