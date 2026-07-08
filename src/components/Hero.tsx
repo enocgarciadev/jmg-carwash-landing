@@ -12,7 +12,7 @@ export default function Hero() {
       <img
         src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1920&q=80"
         alt=""
-        className="absolute inset-0 w-full h-full object-cover object-center scale-105 animate-pulse-slow -z-10"
+        className="absolute inset-0 w-full h-full object-cover object-center scale-105 animate-pulse-slow z-0"
         fetchPriority="high"
         loading="eager"
         decoding="async"
