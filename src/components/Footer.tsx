@@ -12,7 +12,7 @@ export default function Footer() {
             </p>
           </div>
           
-          <p className="text-text-light/40 text-sm">
+          <p className="text-text-light/70 text-sm">
             © {new Date().getFullYear()} JMG Carwash Corp. Todos los derechos reservados.
           </p>
         </div>

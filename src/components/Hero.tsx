@@ -8,9 +8,11 @@ export default function Hero() {
     >
       <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/70 to-primary/90 z-10" />
       
-      {/* Hero LCP image: keep this URL in sync with the preload link in index.html */}
+      {/* Hero LCP image: keep srcSet/sizes in sync with the preload link in index.html */}
       <img
-        src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1920&q=80"
+        src="/images/hero-1920.webp"
+        srcSet="/images/hero-640.webp 640w, /images/hero-1280.webp 1280w, /images/hero-1920.webp 1920w"
+        sizes="100vw"
         alt=""
         className="absolute inset-0 w-full h-full object-cover object-center scale-105 animate-pulse-slow z-0"
         fetchPriority="high"
