@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import { MapPin, Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
 import { useLanguage } from '../i18n/useLanguage'
 
 export default function Navbar() {
@@ -213,7 +214,9 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="mt-8 pt-8 border-t border-text-light/10 space-y-4">
+          <Separator className="bg-text-light/10 mt-8" />
+
+          <div className="pt-8 space-y-4">
             <div
               className="flex items-center justify-center gap-2 border border-text-light/20 rounded-xl p-2"
               role="group"
