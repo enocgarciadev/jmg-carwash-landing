@@ -40,7 +40,7 @@ export default function Hero() {
 
         <div className="mt-12 flex items-center justify-center gap-2 text-text-light/70 text-sm animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
           <MapPin className="w-4 h-4" />
-          <span>Abierto de Lunes a Sábado: 8:00 - 18:00</span>
+          <span>Lunes a Domingo: 8:00AM - 7:00PM</span>
         </div>
       </div>
     </section>

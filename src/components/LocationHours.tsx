@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Clock, ExternalLink } from 'lucide-react'
+import { MapPin, Phone, Clock, ExternalLink } from 'lucide-react'
 
 export default function LocationHours() {
   return (
@@ -49,7 +49,7 @@ export default function LocationHours() {
                   </span>
                 </div>
                 <p className="text-text-light text-2xl md:text-3xl font-bold transition-all duration-300 group-hover:text-accent">
-                  Lunes a Sábado: 8:00 - 18:00
+                  Lunes a Domingo: 8:00AM - 7:00PM
                 </p>
               </div>
 
@@ -61,9 +61,9 @@ export default function LocationHours() {
                   <div>
                     <p className="text-text-light/70 text-sm font-medium mb-1">Dirección</p>
                     <p className="text-text-light font-semibold transition-colors duration-300 group-hover:text-accent">
-                      Av. Principal #123, Zona Comercial
+                      9676 SW 117 Ave. Carwash 1
                       <br />
-                      Ciudad de México, CP 01000
+                      Miami, FL 33183
                     </p>
                   </div>
                 </div>
@@ -74,17 +74,7 @@ export default function LocationHours() {
                   </div>
                   <div>
                     <p className="text-text-light/70 text-sm font-medium mb-1">Teléfono</p>
-                    <p className="text-text-light font-semibold transition-colors duration-300 group-hover:text-accent">+52 55 1234 5678</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 group cursor-default hover:bg-text-light/5 p-3 -m-3 rounded-xl transition-all duration-300">
-                  <div className="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-accent/30 group-hover:scale-110">
-                    <Mail className="w-5 h-5 text-accent transition-transform duration-300 group-hover:scale-110" />
-                  </div>
-                  <div>
-                    <p className="text-text-light/70 text-sm font-medium mb-1">Correo Electrónico</p>
-                    <p className="text-text-light font-semibold transition-colors duration-300 group-hover:text-accent">contacto@jmgcarwash.com</p>
+                    <p className="text-text-light font-semibold transition-colors duration-300 group-hover:text-accent">(305) 992-9248</p>
                   </div>
                 </div>
               </div>
