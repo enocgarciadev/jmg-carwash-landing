@@ -1,0 +1,56 @@
+name: Deploy to Apache
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build application
+        run: pnpm build
+
+      - name: Add remote host to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p ${{ secrets.SSH_PORT || '22' }} -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Configure SSH private key
+        run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+
+      - name: Deploy dist to Apache server via rsync
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT || '22' }}" \
+            dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_PATH }}
+
+      - name: Verify site is reachable (optional)
+        continue-on-error: true
+        run: |
+          curl -fsSL https://${{ secrets.SSH_HOST }} || true
