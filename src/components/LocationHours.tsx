@@ -15,7 +15,7 @@ export default function LocationHours() {
           <div className="bg-card-bg rounded-2xl overflow-hidden shadow-lg shadow-primary/5 border border-primary/5 hover:shadow-2xl hover:shadow-primary/15 transition-all duration-500 ease-out">
             <div className="aspect-[4/3] w-full bg-secondary relative group">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2!2d-74.0!3d40.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzAwLjAiTiA3NMKwMDAnMDAuMCJX!5e0!3m2!1ses!2sus!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3594.2!2d-80.3829374!3d25.7047911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDQyJzE3LjIiTiA4MMKwMjInNTguNiJX!5e0!3m2!1ses!2sus!4v1234567890"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: '400px' }}
@@ -28,7 +28,7 @@ export default function LocationHours() {
             </div>
             <div className="p-6">
               <a
-                href="https://www.google.com/maps"
+                href="https://www.google.com/maps/search/?api=1&query=6776+SW+117th+Ave%2C+Miami%2C+FL+33183"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 w-full bg-primary hover:bg-text-primary text-text-light px-6 py-3 rounded-xl font-semibold transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/30 active:scale-[0.98] cursor-pointer group"
@@ -61,7 +61,7 @@ export default function LocationHours() {
                   <div>
                     <p className="text-text-light/70 text-sm font-medium mb-1">Dirección</p>
                     <p className="text-text-light font-semibold transition-colors duration-300 group-hover:text-accent">
-                      9676 SW 117 Ave. Carwash 1
+                      6776 SW 117th Ave.
                       <br />
                       Miami, FL 33183
                     </p>

@@ -35,7 +35,7 @@ export default function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
           <a
-            href="https://www.google.com/maps"
+            href="https://www.google.com/maps/dir/?api=1&destination=6776+SW+117th+Ave%2C+Miami%2C+FL+33183"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-text-light px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl hover:shadow-accent/40 active:scale-95 cursor-pointer group"
