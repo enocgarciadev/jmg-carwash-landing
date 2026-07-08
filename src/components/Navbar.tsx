@@ -118,7 +118,7 @@ export default function Navbar() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
               aria-expanded={isMobileMenuOpen}
-              className="text-text-light p-2 cursor-pointer hover:bg-text-light/10 rounded-lg transition-all duration-300 h-11 w-11 flex items-center justify-center"
+              className="relative z-[60] text-text-light p-2 cursor-pointer hover:bg-text-light/10 rounded-lg transition-all duration-300 h-11 w-11 flex items-center justify-center"
             >
               {isMobileMenuOpen ? (
                 <X className="w-6 h-6 transition-transform duration-300 rotate-90" />
@@ -143,7 +143,7 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       <div
-        className={`fixed inset-y-0 right-0 z-40 w-full max-w-sm bg-primary/98 backdrop-blur-xl shadow-2xl transform transition-transform duration-300 ease-out md:hidden ${
+        className={`fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-primary/98 backdrop-blur-xl shadow-2xl transform transition-transform duration-300 ease-out md:hidden ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         aria-hidden={!isMobileMenuOpen}
