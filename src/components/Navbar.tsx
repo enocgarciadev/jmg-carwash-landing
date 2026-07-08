@@ -1,17 +1,22 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { MapPin, Menu, X } from 'lucide-react'
-
-const navItems = [
-  { id: 'hero', label: 'Inicio' },
-  { id: 'about', label: 'Acerca de' },
-  { id: 'services', label: 'Servicios' },
-  { id: 'location', label: 'Contacto' },
-] as const
+import { useLanguage } from '../i18n/useLanguage'
 
 export default function Navbar() {
+  const { locale, setLocale, t } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
+
+  const navItems = useMemo(
+    () => [
+      { id: 'hero', label: t('nav.home') },
+      { id: 'about', label: t('nav.about') },
+      { id: 'services', label: t('nav.services') },
+      { id: 'location', label: t('nav.contact') },
+    ],
+    [t]
+  )
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +44,7 @@ export default function Navbar() {
     })
 
     return () => observer.disconnect()
-  }, [])
+  }, [navItems])
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -70,6 +75,15 @@ export default function Navbar() {
   const mobileLinkActive = 'text-accent bg-text-light/5 relative'
   const mobileLinkInactive = 'text-text-light/90 hover:text-text-light hover:bg-text-light/5'
 
+  const langButtonBase =
+    'px-2 py-1 rounded text-sm font-semibold transition-all duration-300 min-w-[36px]'
+  const langButtonActive = 'bg-accent text-text-light shadow-md'
+  const langButtonInactive =
+    'text-text-light/70 hover:text-text-light hover:bg-text-light/10'
+
+  const mobileLangButtonBase =
+    'px-4 py-3 rounded-xl text-lg font-semibold transition-all duration-300 min-w-[56px]'
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
@@ -86,7 +100,7 @@ export default function Navbar() {
             </span>
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map(({ id, label }) => (
               <button
                 key={id}
@@ -101,7 +115,32 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-4">
+            <div
+              className="flex items-center gap-1 border border-text-light/20 rounded-lg p-1"
+              role="group"
+              aria-label={t('lang.switcherLabel')}
+            >
+              <button
+                onClick={() => setLocale('es')}
+                aria-pressed={locale === 'es'}
+                className={`${langButtonBase} ${
+                  locale === 'es' ? langButtonActive : langButtonInactive
+                }`}
+              >
+                {t('lang.es')}
+              </button>
+              <button
+                onClick={() => setLocale('en')}
+                aria-pressed={locale === 'en'}
+                className={`${langButtonBase} ${
+                  locale === 'en' ? langButtonActive : langButtonInactive
+                }`}
+              >
+                {t('lang.en')}
+              </button>
+            </div>
+
             <a
               href="https://www.google.com/maps/dir/?api=1&destination=6776+SW+117th+Ave%2C+Miami%2C+FL+33183"
               target="_blank"
@@ -109,14 +148,16 @@ export default function Navbar() {
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-text-light px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg hover:shadow-accent/30 active:scale-95"
             >
               <MapPin className="w-4 h-4" />
-              CÓMO LLEGAR
+              {t('nav.directions')}
             </a>
           </div>
 
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+              aria-label={
+                isMobileMenuOpen ? t('nav.closeMenu') : t('nav.openMenu')
+              }
               aria-expanded={isMobileMenuOpen}
               className="relative z-[60] text-text-light p-2 cursor-pointer hover:bg-text-light/10 rounded-lg transition-all duration-300 h-11 w-11 flex items-center justify-center"
             >
@@ -170,7 +211,32 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="mt-8 pt-8 border-t border-text-light/10">
+          <div className="mt-8 pt-8 border-t border-text-light/10 space-y-4">
+            <div
+              className="flex items-center justify-center gap-2 border border-text-light/20 rounded-xl p-2"
+              role="group"
+              aria-label={t('lang.switcherLabel')}
+            >
+              <button
+                onClick={() => setLocale('es')}
+                aria-pressed={locale === 'es'}
+                className={`${mobileLangButtonBase} ${
+                  locale === 'es' ? langButtonActive : langButtonInactive
+                }`}
+              >
+                {t('lang.es')}
+              </button>
+              <button
+                onClick={() => setLocale('en')}
+                aria-pressed={locale === 'en'}
+                className={`${mobileLangButtonBase} ${
+                  locale === 'en' ? langButtonActive : langButtonInactive
+                }`}
+              >
+                {t('lang.en')}
+              </button>
+            </div>
+
             <a
               href="https://www.google.com/maps/dir/?api=1&destination=6776+SW+117th+Ave%2C+Miami%2C+FL+33183"
               target="_blank"
@@ -178,7 +244,7 @@ export default function Navbar() {
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-text-light px-6 py-4 rounded-xl text-lg font-semibold transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg hover:shadow-accent/30 active:scale-95"
             >
               <MapPin className="w-5 h-5" />
-              CÓMO LLEGAR
+              {t('nav.directions')}
             </a>
           </div>
         </div>
