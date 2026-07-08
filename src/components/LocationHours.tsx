@@ -1,12 +1,17 @@
 import { MapPin, Phone, Clock, ExternalLink } from 'lucide-react'
+import { useLanguage } from '../i18n/useLanguage'
 
 export default function LocationHours() {
+  const { t } = useLanguage()
+
+  const addressLines = t('location.address').split('\n')
+
   return (
     <section id="location" className="py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4">
-            Encuéntranos Ahora
+            {t('location.title')}
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto rounded-full" />
         </div>
@@ -22,7 +27,7 @@ export default function LocationHours() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Ubicación JMG Carwash Corp"
+                title={t('location.iframeTitle')}
                 className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105"
               />
             </div>
@@ -34,7 +39,7 @@ export default function LocationHours() {
                 className="inline-flex items-center justify-center gap-2 w-full bg-primary hover:bg-text-primary text-text-light px-6 py-3 rounded-xl font-semibold transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/30 active:scale-[0.98] cursor-pointer group"
               >
                 <ExternalLink className="w-4 h-4 transition-transform duration-300 group-hover:rotate-12" />
-                VER MAPA GRANDE
+                {t('location.mapButton')}
               </a>
             </div>
           </div>
@@ -45,11 +50,11 @@ export default function LocationHours() {
                 <div className="flex items-center gap-2 mb-2">
                   <Clock className="w-5 h-5 text-accent transition-transform duration-300 group-hover:scale-110" />
                   <span className="text-text-light/70 text-sm font-semibold uppercase tracking-wider">
-                    Horario de Atención
+                    {t('location.hoursLabel')}
                   </span>
                 </div>
                 <p className="text-text-light text-2xl md:text-3xl font-bold transition-all duration-300 group-hover:text-accent">
-                  Lunes a Domingo: 8:00AM - 7:00PM
+                  {t('location.hours')}
                 </p>
               </div>
 
@@ -59,11 +64,14 @@ export default function LocationHours() {
                     <MapPin className="w-5 h-5 text-accent transition-transform duration-300 group-hover:scale-110" />
                   </div>
                   <div>
-                    <p className="text-text-light/70 text-sm font-medium mb-1">Dirección</p>
+                    <p className="text-text-light/70 text-sm font-medium mb-1">{t('location.addressLabel')}</p>
                     <p className="text-text-light font-semibold transition-colors duration-300 group-hover:text-accent">
-                      6776 SW 117th Ave.
-                      <br />
-                      Miami, FL 33183
+                      {addressLines.map((line, index) => (
+                        <span key={index}>
+                          {line}
+                          {index < addressLines.length - 1 && <br />}
+                        </span>
+                      ))}
                     </p>
                   </div>
                 </div>
@@ -73,15 +81,15 @@ export default function LocationHours() {
                     <Phone className="w-5 h-5 text-accent transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
                   </div>
                   <div>
-                    <p className="text-text-light/70 text-sm font-medium mb-1">Teléfono</p>
-                    <p className="text-text-light font-semibold transition-colors duration-300 group-hover:text-accent">(305) 992-9248</p>
+                    <p className="text-text-light/70 text-sm font-medium mb-1">{t('location.phoneLabel')}</p>
+                    <p className="text-text-light font-semibold transition-colors duration-300 group-hover:text-accent">{t('location.phone')}</p>
                   </div>
                 </div>
               </div>
 
               <div className="pt-6 border-t border-text-light/10">
                 <p className="text-text-light/60 text-sm text-center">
-                  Visítanos sin cita previa. Te atendemos en orden de llegada.
+                  {t('location.footer')}
                 </p>
               </div>
             </div>

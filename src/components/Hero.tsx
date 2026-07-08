@@ -1,6 +1,9 @@
 import { MapPin, Navigation } from 'lucide-react'
+import { useLanguage } from '../i18n/useLanguage'
 
 export default function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section
       id="hero"
@@ -24,13 +27,13 @@ export default function Hero() {
 
       <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-text-light leading-[1.1] mb-6 animate-fade-in-up">
-          Cuidado Automotriz
+          {t('hero.title')}
           <br />
-          <span className="text-accent">de Nivel Superior</span>
+          <span className="text-accent">{t('hero.highlight')}</span>
         </h1>
         
         <p className="text-base sm:text-lg text-text-light/90 mb-4 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          Atención premium en orden de llegada. Visítanos hoy mismo sin necesidad de cita previa.
+          {t('hero.subtitle')}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
@@ -41,13 +44,13 @@ export default function Hero() {
             className="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-text-light px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl hover:shadow-accent/40 active:scale-95 cursor-pointer group"
           >
             <Navigation className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" />
-            CÓMO LLEGAR (MAPS / WAZE)
+            {t('hero.cta')}
           </a>
         </div>
 
         <div className="mt-12 flex items-center justify-center gap-2 text-text-light/70 text-sm animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
           <MapPin className="w-4 h-4" />
-          <span>Lunes a Domingo: 8:00AM - 7:00PM</span>
+          <span>{t('hero.hours')}</span>
         </div>
       </div>
     </section>
