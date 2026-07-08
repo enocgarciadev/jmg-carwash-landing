@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import { MapPin, Menu, X } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 import { useLanguage } from '../i18n/useLanguage'
 
 export default function Navbar() {
@@ -75,15 +76,6 @@ export default function Navbar() {
   const mobileLinkActive = 'text-accent bg-text-light/5 relative'
   const mobileLinkInactive = 'text-text-light/90 hover:text-text-light hover:bg-text-light/5'
 
-  const langButtonBase =
-    'px-2 py-1 rounded text-sm font-semibold transition-all duration-300 min-w-[36px]'
-  const langButtonActive = 'bg-accent text-text-light shadow-md'
-  const langButtonInactive =
-    'text-text-light/70 hover:text-text-light hover:bg-text-light/10'
-
-  const mobileLangButtonBase =
-    'px-4 py-3 rounded-xl text-lg font-semibold transition-all duration-300 min-w-[56px]'
-
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
@@ -121,35 +113,45 @@ export default function Navbar() {
               role="group"
               aria-label={t('lang.switcherLabel')}
             >
-              <button
+              <Button
                 onClick={() => setLocale('es')}
                 aria-pressed={locale === 'es'}
-                className={`${langButtonBase} ${
-                  locale === 'es' ? langButtonActive : langButtonInactive
+                variant={locale === 'es' ? 'accent' : 'ghost'}
+                size="sm"
+                className={`px-2 py-1 h-auto min-w-[36px] text-sm font-semibold rounded ${
+                  locale === 'es' ? 'shadow-md' : 'text-text-light/70 hover:text-text-light hover:bg-text-light/10'
                 }`}
               >
                 {t('lang.es')}
-              </button>
-              <button
+              </Button>
+              <Button
                 onClick={() => setLocale('en')}
                 aria-pressed={locale === 'en'}
-                className={`${langButtonBase} ${
-                  locale === 'en' ? langButtonActive : langButtonInactive
+                variant={locale === 'en' ? 'accent' : 'ghost'}
+                size="sm"
+                className={`px-2 py-1 h-auto min-w-[36px] text-sm font-semibold rounded ${
+                  locale === 'en' ? 'shadow-md' : 'text-text-light/70 hover:text-text-light hover:bg-text-light/10'
                 }`}
               >
                 {t('lang.en')}
-              </button>
+              </Button>
             </div>
 
-            <a
-              href="https://www.google.com/maps/dir/?api=1&destination=6776+SW+117th+Ave%2C+Miami%2C+FL+33183"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-text-light px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg hover:shadow-accent/30 active:scale-95"
+            <Button
+              variant="accent"
+              size="sm"
+              asChild
+              className="px-5 py-2.5 h-auto text-sm font-semibold rounded-lg gap-2"
             >
-              <MapPin className="w-4 h-4" />
-              {t('nav.directions')}
-            </a>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=6776+SW+117th+Ave%2C+Miami%2C+FL+33183"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MapPin className="w-4 h-4" />
+                {t('nav.directions')}
+              </a>
+            </Button>
           </div>
 
           <div className="md:hidden">
@@ -217,35 +219,45 @@ export default function Navbar() {
               role="group"
               aria-label={t('lang.switcherLabel')}
             >
-              <button
+              <Button
                 onClick={() => setLocale('es')}
                 aria-pressed={locale === 'es'}
-                className={`${mobileLangButtonBase} ${
-                  locale === 'es' ? langButtonActive : langButtonInactive
+                variant={locale === 'es' ? 'accent' : 'ghost'}
+                size="lg"
+                className={`px-4 py-3 h-auto min-w-[56px] text-lg font-semibold rounded-xl ${
+                  locale === 'es' ? 'shadow-md' : 'text-text-light/70 hover:text-text-light hover:bg-text-light/10'
                 }`}
               >
                 {t('lang.es')}
-              </button>
-              <button
+              </Button>
+              <Button
                 onClick={() => setLocale('en')}
                 aria-pressed={locale === 'en'}
-                className={`${mobileLangButtonBase} ${
-                  locale === 'en' ? langButtonActive : langButtonInactive
+                variant={locale === 'en' ? 'accent' : 'ghost'}
+                size="lg"
+                className={`px-4 py-3 h-auto min-w-[56px] text-lg font-semibold rounded-xl ${
+                  locale === 'en' ? 'shadow-md' : 'text-text-light/70 hover:text-text-light hover:bg-text-light/10'
                 }`}
               >
                 {t('lang.en')}
-              </button>
+              </Button>
             </div>
 
-            <a
-              href="https://www.google.com/maps/dir/?api=1&destination=6776+SW+117th+Ave%2C+Miami%2C+FL+33183"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-text-light px-6 py-4 rounded-xl text-lg font-semibold transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg hover:shadow-accent/30 active:scale-95"
+            <Button
+              variant="accent"
+              size="lg"
+              asChild
+              className="w-full px-6 py-4 h-auto text-lg font-semibold rounded-xl gap-2"
             >
-              <MapPin className="w-5 h-5" />
-              {t('nav.directions')}
-            </a>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=6776+SW+117th+Ave%2C+Miami%2C+FL+33183"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MapPin className="w-5 h-5" />
+                {t('nav.directions')}
+              </a>
+            </Button>
           </div>
         </div>
       </div>
