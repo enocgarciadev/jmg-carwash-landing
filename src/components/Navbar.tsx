@@ -1,9 +1,17 @@
 import { useState, useEffect } from 'react'
 import { MapPin, Menu, X } from 'lucide-react'
 
+const navItems = [
+  { id: 'hero', label: 'Inicio' },
+  { id: 'about', label: 'Acerca de' },
+  { id: 'services', label: 'Servicios' },
+  { id: 'location', label: 'Contacto' },
+] as const
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('hero')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +21,37 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      { rootMargin: '-80px 0px -60% 0px', threshold: 0.1 }
+    )
+
+    navItems.forEach(({ id }) => {
+      const element = document.getElementById(id)
+      if (element) observer.observe(element)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
     if (element) {
@@ -20,6 +59,16 @@ export default function Navbar() {
     }
     setIsMobileMenuOpen(false)
   }
+
+  const desktopLinkBase =
+    'relative text-sm font-medium transition-all duration-300 cursor-pointer py-2 after:content-[""] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:text-text-light hover:after:w-full active:scale-[0.97]'
+  const desktopLinkActive = 'text-accent after:w-full'
+  const desktopLinkInactive = 'text-text-light/90 after:w-0'
+
+  const mobileLinkBase =
+    'block w-full text-left text-2xl font-semibold py-4 px-3 min-h-[44px] transition-all duration-300 rounded-lg active:scale-[0.97]'
+  const mobileLinkActive = 'text-accent bg-text-light/5 relative'
+  const mobileLinkInactive = 'text-text-light/90 hover:text-text-light hover:bg-text-light/5'
 
   return (
     <nav
@@ -38,30 +87,18 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection('hero')}
-              className="text-text-light/90 hover:text-text-light text-sm font-medium transition-all duration-300 cursor-pointer relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
-            >
-              Inicio
-            </button>
-            <button
-              onClick={() => scrollToSection('about')}
-              className="text-text-light/90 hover:text-text-light text-sm font-medium transition-all duration-300 cursor-pointer relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
-            >
-              Acerca de
-            </button>
-            <button
-              onClick={() => scrollToSection('services')}
-              className="text-text-light/90 hover:text-text-light text-sm font-medium transition-all duration-300 cursor-pointer relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
-            >
-              Servicios
-            </button>
-            <button
-              onClick={() => scrollToSection('location')}
-              className="text-text-light/90 hover:text-text-light text-sm font-medium transition-all duration-300 cursor-pointer relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
-            >
-              Contacto
-            </button>
+            {navItems.map(({ id, label }) => (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                aria-current={activeSection === id ? 'page' : undefined}
+                className={`${desktopLinkBase} ${
+                  activeSection === id ? desktopLinkActive : desktopLinkInactive
+                }`}
+              >
+                {label}
+              </button>
+            ))}
           </div>
 
           <div className="hidden md:block">
@@ -81,52 +118,70 @@ export default function Navbar() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
               aria-expanded={isMobileMenuOpen}
-              className="text-text-light p-2 cursor-pointer hover:bg-text-light/10 rounded-lg transition-all duration-300"
+              className="text-text-light p-2 cursor-pointer hover:bg-text-light/10 rounded-lg transition-all duration-300 h-11 w-11 flex items-center justify-center"
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6 transition-transform duration-300 rotate-90" />
+              ) : (
+                <Menu className="w-6 h-6 transition-transform duration-300" />
+              )}
             </button>
           </div>
         </div>
+      </div>
 
-        {isMobileMenuOpen && (
-          <div className="md:hidden bg-primary/95 backdrop-blur-md border-t border-text-light/10 transition-all duration-300">
-            <div className="px-4 pt-2 pb-4 space-y-1">
+      {/* Backdrop */}
+      <div
+        className={`fixed inset-0 z-40 bg-primary/80 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
+          isMobileMenuOpen
+            ? 'opacity-100 pointer-events-auto'
+            : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setIsMobileMenuOpen(false)}
+        aria-hidden="true"
+      />
+
+      {/* Mobile drawer */}
+      <div
+        className={`fixed inset-y-0 right-0 z-40 w-full max-w-sm bg-primary/98 backdrop-blur-xl shadow-2xl transform transition-transform duration-300 ease-out md:hidden ${
+          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+        aria-hidden={!isMobileMenuOpen}
+      >
+        <div className="flex flex-col h-full px-6 pt-20 pb-8 overflow-y-auto overscroll-contain">
+          <div className="space-y-2">
+            {navItems.map(({ id, label }) => (
               <button
-                onClick={() => scrollToSection('hero')}
-                className="block w-full text-left text-text-light/90 hover:text-text-light hover:bg-text-light/5 py-3 px-3 text-sm font-medium transition-all duration-300 rounded-lg cursor-pointer"
+                key={id}
+                onClick={() => scrollToSection(id)}
+                aria-current={activeSection === id ? 'page' : undefined}
+                className={`${mobileLinkBase} ${
+                  activeSection === id ? mobileLinkActive : mobileLinkInactive
+                }`}
               >
-                Inicio
+                <span
+                  className={`w-1.5 h-1.5 rounded-full bg-accent mr-3 transition-opacity ${
+                    activeSection === id ? 'opacity-100' : 'opacity-0'
+                  }`}
+                  aria-hidden="true"
+                />
+                {label}
               </button>
-              <button
-                onClick={() => scrollToSection('about')}
-                className="block w-full text-left text-text-light/90 hover:text-text-light hover:bg-text-light/5 py-3 px-3 text-sm font-medium transition-all duration-300 rounded-lg cursor-pointer"
-              >
-                Acerca de
-              </button>
-              <button
-                onClick={() => scrollToSection('services')}
-                className="block w-full text-left text-text-light/90 hover:text-text-light hover:bg-text-light/5 py-3 px-3 text-sm font-medium transition-all duration-300 rounded-lg cursor-pointer"
-              >
-                Servicios
-              </button>
-              <button
-                onClick={() => scrollToSection('location')}
-                className="block w-full text-left text-text-light/90 hover:text-text-light hover:bg-text-light/5 py-3 px-3 text-sm font-medium transition-all duration-300 rounded-lg cursor-pointer"
-              >
-                Contacto
-              </button>
-              <a
-                href="https://www.google.com/maps/dir/?api=1&destination=6776+SW+117th+Ave%2C+Miami%2C+FL+33183"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-text-light px-4 py-3 rounded-lg text-sm font-semibold mt-2 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent/30"
-              >
-                <MapPin className="w-4 h-4" />
-                CÓMO LLEGAR
-              </a>
-            </div>
+            ))}
           </div>
-        )}
+
+          <div className="mt-8 pt-8 border-t border-text-light/10">
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=6776+SW+117th+Ave%2C+Miami%2C+FL+33183"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-text-light px-6 py-4 rounded-xl text-lg font-semibold transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg hover:shadow-accent/30 active:scale-95"
+            >
+              <MapPin className="w-5 h-5" />
+              CÓMO LLEGAR
+            </a>
+          </div>
+        </div>
       </div>
     </nav>
   )

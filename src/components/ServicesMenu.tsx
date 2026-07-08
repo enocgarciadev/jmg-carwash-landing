@@ -71,7 +71,7 @@ const services = [
 
 export default function ServicesMenu() {
   return (
-    <section id="services" className="py-20 md:py-28 bg-secondary">
+    <section id="services" className="py-16 md:py-28 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4">
@@ -87,7 +87,7 @@ export default function ServicesMenu() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-card-bg rounded-2xl p-6 md:p-8 shadow-lg shadow-primary/5 border border-primary/5 hover:shadow-2xl hover:shadow-primary/15 transition-all duration-500 ease-out hover:-translate-y-3 cursor-pointer group flex flex-col"
+              className="bg-card-bg rounded-2xl p-6 md:p-8 shadow-lg shadow-primary/5 border border-primary/5 hover:shadow-2xl hover:shadow-primary/15 transition-all duration-500 ease-out hover:-translate-y-3 cursor-pointer group flex flex-col active:scale-[0.98]"
             >
               <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5 transition-all duration-500 ease-out group-hover:scale-110 group-hover:bg-accent/20">
                 <service.icon className="w-6 h-6 text-accent transition-transform duration-500 ease-out group-hover:scale-110" />

@@ -14,7 +14,7 @@ export default function Hero() {
         srcSet="/images/hero-640.webp 640w, /images/hero-1280.webp 1280w, /images/hero-1920.webp 1920w"
         sizes="100vw"
         alt=""
-        className="absolute inset-0 w-full h-full object-cover object-center scale-105 animate-pulse-slow z-0"
+        className="absolute inset-0 w-full h-full object-cover object-center animate-pulse-slow z-0"
         fetchPriority="high"
         loading="eager"
         decoding="async"
@@ -23,13 +23,13 @@ export default function Hero() {
       />
 
       <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-text-light leading-tight mb-6 animate-fade-in-up">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-text-light leading-[1.1] mb-6 animate-fade-in-up">
           Cuidado Automotriz
           <br />
           <span className="text-accent">de Nivel Superior</span>
         </h1>
         
-        <p className="text-lg sm:text-xl md:text-2xl text-text-light/90 mb-4 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <p className="text-base sm:text-lg text-text-light/90 mb-4 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           Atención premium en orden de llegada. Visítanos hoy mismo sin necesidad de cita previa.
         </p>
 

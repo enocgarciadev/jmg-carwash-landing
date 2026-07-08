@@ -13,12 +13,12 @@ export default function LocationHours() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           <div className="bg-card-bg rounded-2xl overflow-hidden shadow-lg shadow-primary/5 border border-primary/5 hover:shadow-2xl hover:shadow-primary/15 transition-all duration-500 ease-out">
-            <div className="aspect-[4/3] w-full bg-secondary relative group">
+            <div className="aspect-[4/3] w-full bg-secondary relative group min-h-[280px] md:min-h-[400px]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3594.2!2d-80.3829374!3d25.7047911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDQyJzE3LjIiTiA4MMKwMjInNTguNiJX!5e0!3m2!1ses!2sus!4v1234567890"
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: '400px' }}
+                style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -39,7 +39,7 @@ export default function LocationHours() {
             </div>
           </div>
 
-          <div className="bg-primary rounded-2xl p-8 md:p-10 lg:p-12 shadow-lg flex flex-col justify-center hover:shadow-2xl hover:shadow-primary/30 transition-all duration-500 ease-out">
+          <div className="bg-primary rounded-2xl p-6 md:p-10 lg:p-12 shadow-lg flex flex-col justify-center hover:shadow-2xl hover:shadow-primary/30 transition-all duration-500 ease-out">
             <div className="space-y-8">
               <div className="group cursor-default">
                 <div className="flex items-center gap-2 mb-2">
