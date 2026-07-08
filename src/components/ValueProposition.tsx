@@ -1,4 +1,5 @@
 import { CalendarCheck, Building2, Clock } from 'lucide-react'
+import { Card } from '@/components/ui/card'
 import { useLanguage } from '../i18n/useLanguage'
 
 export default function ValueProposition() {
@@ -34,9 +35,9 @@ export default function ValueProposition() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {benefits.map((benefit, index) => (
-            <div
+            <Card
               key={index}
-              className="bg-card-bg rounded-2xl p-8 shadow-lg shadow-primary/5 border border-primary/5 hover:shadow-2xl hover:shadow-primary/15 transition-all duration-500 ease-out hover:-translate-y-3 cursor-pointer group"
+              className="bg-card rounded-2xl p-8 shadow-lg shadow-primary/5 border border-primary/5 ring-0 hover:shadow-2xl hover:shadow-primary/15 transition-all duration-500 ease-out hover:-translate-y-3 cursor-pointer group"
             >
               <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 transition-all duration-500 ease-out group-hover:scale-110 group-hover:bg-accent/20">
                 <benefit.icon className="w-7 h-7 text-accent transition-transform duration-500 ease-out group-hover:scale-110" />
@@ -47,7 +48,7 @@ export default function ValueProposition() {
               <p className="text-text-primary/80 leading-relaxed transition-colors duration-300 group-hover:text-text-primary">
                 {benefit.description}
               </p>
-            </div>
+            </Card>
           ))}
         </div>
       </div>
