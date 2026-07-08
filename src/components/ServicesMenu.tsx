@@ -1,9 +1,9 @@
-import { Car, Sparkles, ShieldCheck, Paintbrush, Gem, ChevronRight } from 'lucide-react'
+import { Car, Truck, Sparkles, ChevronRight } from 'lucide-react'
 
 const services = [
   {
     icon: Car,
-    name: 'Lavado Express / Básico',
+    name: 'Autos Compactos / Sedán',
     price: 'Desde $25',
     features: [
       'Lavado exterior completo',
@@ -13,47 +13,58 @@ const services = [
     ],
   },
   {
+    icon: Car,
+    name: 'SUVs / Vehículos Medianos',
+    price: 'Desde $30',
+    features: [
+      'Lavado exterior completo',
+      'Aspirado interior',
+      'Limpieza de vidrios',
+      'Protección de plásticos',
+    ],
+  },
+  {
+    icon: Car,
+    name: 'Camionetas / Full Size',
+    price: 'Desde $35',
+    features: [
+      'Lavado exterior completo',
+      'Aspirado interior profundo',
+      'Limpieza de vidrios',
+      'Acondicionamiento básico',
+    ],
+  },
+  {
+    icon: Truck,
+    name: 'Camiones Grandes',
+    price: 'Desde $40',
+    features: [
+      'Lavado exterior completo',
+      'Limpieza de cabina',
+      'Limpieza de vidrios',
+      'Aspirado básico',
+    ],
+  },
+  {
+    icon: Truck,
+    name: 'Camiones Pesados',
+    price: 'Desde $60',
+    features: [
+      'Lavado exterior completo',
+      'Limpieza de cabina profunda',
+      'Limpieza de vidrios',
+      'Acondicionamiento de plásticos',
+    ],
+  },
+  {
     icon: Sparkles,
-    name: 'Lavado Premium / Detallado Integral',
-    price: 'Desde $55',
+    name: 'Detailing Wash',
+    price: 'Desde $60',
     features: [
       'Limpieza profunda exterior',
-      'Aspirado exhaustivo interior',
-      'Protección de plásticos',
-      'Acondicionamiento de cuero',
-    ],
-  },
-  {
-    icon: ShieldCheck,
-    name: 'Desinfección y Limpieza de Tapicería',
-    price: 'Desde $80',
-    features: [
-      'Tratamiento profundo asientos',
-      'Limpieza alfombras',
-      'Eliminación de olores',
-      'Desinfección completa',
-    ],
-  },
-  {
-    icon: Paintbrush,
-    name: 'Pulido y Encerado de Alta Gama',
-    price: 'Desde $120',
-    features: [
-      'Corrección menor de pintura',
-      'Sellado de brillo duradero',
-      'Eliminación de swirl marks',
-      'Protección UV',
-    ],
-  },
-  {
-    icon: Gem,
-    name: 'Tratamiento Cerámico / Protección Avanzada',
-    price: 'Desde $250',
-    features: [
-      'Protección hidrofóbica superior',
-      'Duración de hasta 2 años',
-      'Resistencia a químicos',
-      'Brillo extremo garantizado',
+      'Limpieza interior detallada',
+      'Protección de plásticos y cuero',
+      'Brillo y acabado premium',
     ],
   },
 ]
