@@ -8,11 +8,16 @@ export default function Hero() {
     >
       <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/70 to-primary/90 z-10" />
       
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 animate-pulse-slow"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1920&q=80')`,
-        }}
+      {/* Hero LCP image: keep this URL in sync with the preload link in index.html */}
+      <img
+        src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1920&q=80"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover object-center scale-105 animate-pulse-slow -z-10"
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
+        width="1920"
+        height="1280"
       />
 
       <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
