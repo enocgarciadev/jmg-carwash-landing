@@ -8,7 +8,8 @@ This project uses a small, brand-first token set. shadcn/ui variables are mapped
 |---|---|---|
 | `--color-primary` | `#0F172A` | Hero backgrounds, primary surfaces |
 | `--color-secondary` | `#F8FAFC` | Light backgrounds |
-| `--color-accent` | `#2563EB` | CTAs, focus rings, links |
+| `--color-accent` | `#0D9488` | CTAs, focus rings, links (deep teal) |
+| `--color-accent-gold` | `#B45309` | Premium highlights, bronze/gold accents |
 | `--color-text-primary` | `#1E293B` | Body text on light surfaces |
 | `--color-text-light` | `#FFFFFF` | Text on dark surfaces |
 | `--color-card-bg` | `#FFFFFF` | Card surfaces |
@@ -23,9 +24,9 @@ These tokens live in `src/index.css` inside the top `@theme` block. They are kep
 | `--primary-foreground` | `#FFFFFF` | `--color-text-light` |
 | `--secondary` | `#F8FAFC` | `--color-secondary` |
 | `--secondary-foreground` | `#1E293B` | `--color-text-primary` |
-| `--accent` | `#2563EB` | `--color-accent` |
+| `--accent` | `#0D9488` | `--color-accent` (deep teal) |
 | `--accent-foreground` | `#FFFFFF` | `--color-text-light` |
-| `--ring` | `#2563EB` | `--color-accent` |
+| `--ring` | `#0D9488` | `--color-accent` (focus rings) |
 | `--background` | `#F8FAFC` | `--color-secondary` |
 | `--foreground` | `#1E293B` | `--color-text-primary` |
 | `--card` | `#FFFFFF` | `--color-card-bg` |
@@ -38,6 +39,11 @@ These tokens live in `src/index.css` inside the top `@theme` block. They are kep
 | `--input` | `#E2E8F0` | Form borders |
 | `--destructive` | `#EF4444` | Error states |
 | `--radius` | `0.625rem` | Global radius base |
+
+## Contrast
+
+- Teal `#0D9488` on white `#FFFFFF` passes WCAG AA for large text and UI components; use `--color-primary` (`#0F172A`) for small body text on light surfaces.
+- Gold `#B45309` is intended for small highlights and icons; pair with light backgrounds for readability.
 
 ## Typography
 
