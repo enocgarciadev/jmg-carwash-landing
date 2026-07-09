@@ -8,7 +8,8 @@
 @theme {
   --color-primary: #0F172A;
   --color-secondary: #F8FAFC;
-  --color-accent: #2563EB;
+  --color-accent: #0D9488;
+  --color-accent-gold: #B45309;
   --color-text-primary: #1E293B;
   --color-text-light: #FFFFFF;
   --color-card-bg: #FFFFFF;
@@ -68,6 +69,13 @@ button, a {
   animation: pulseSlow 20s ease-in-out infinite;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-pulse-slow {
+    animation: none;
+  }
+}
+
 @theme inline {
   --font-heading: var(--font-sans);
   --font-sans: 'Geist Variable', sans-serif;
@@ -116,9 +124,9 @@ button, a {
   --primary-foreground: #FFFFFF;
   --secondary: #F8FAFC;
   --secondary-foreground: #1E293B;
-  --accent: #2563EB;
+  --accent: #0D9488;
   --accent-foreground: #FFFFFF;
-  --ring: #2563EB;
+  --ring: #0D9488;
   --background: #F8FAFC;
   --foreground: #1E293B;
   --card: #FFFFFF;
