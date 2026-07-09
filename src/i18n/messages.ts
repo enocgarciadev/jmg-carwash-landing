@@ -9,8 +9,8 @@ export const messages = {
     'nav.home': 'Inicio',
     'nav.about': 'Acerca de',
     'nav.services': 'Servicios',
-    'nav.contact': 'Contacto',
-    'nav.directions': 'CÓMO LLEGAR',
+    'nav.location': 'Ubicación',
+    'nav.directions': 'Cómo llegar',
     'nav.openMenu': 'Abrir menú',
     'nav.closeMenu': 'Cerrar menú',
 
@@ -19,7 +19,7 @@ export const messages = {
     'hero.highlight': 'de Nivel Superior',
     'hero.subtitle':
       'Atención premium en orden de llegada. Visítanos hoy mismo sin necesidad de cita previa.',
-    'hero.cta': 'CÓMO LLEGAR (MAPS / WAZE)',
+    'hero.cta': 'Cómo llegar (Maps / Waze)',
     'hero.hours': 'Lunes a Domingo: 8:00AM - 7:00PM',
 
     // About
@@ -38,7 +38,7 @@ export const messages = {
     'services.title': 'Nuestros Servicios',
     'services.intro':
       'Selecciona el servicio ideal para tu vehículo y visítanos directamente',
-    'services.cta': 'VISÍTANOS',
+    'services.cta': 'Visítanos',
     'services.footer': '¡Elige tu servicio y visítanos! No necesitas reservar.',
 
     'services.compact.name': 'Autos Compactos / Sedán',
@@ -93,7 +93,7 @@ export const messages = {
     'location.phone': '(305) 992-9248',
     'location.footer':
       'Visítanos sin cita previa. Te atendemos en orden de llegada.',
-    'location.mapButton': 'VER MAPA GRANDE',
+    'location.mapButton': 'Ver mapa grande',
     'location.iframeTitle': 'Ubicación JMG Carwash Corp',
 
     // Footer
@@ -106,6 +106,10 @@ export const messages = {
     'meta.description':
       'JMG Carwash Corp - Lavado de autos premium. Atención en orden de llegada, sin citas previas. Visítanos hoy mismo.',
 
+    // Mobile bottom bar
+    'mobileBar.call': 'Llamar',
+    'mobileBar.directions': 'Cómo llegar',
+
     // Language switcher
     'lang.switcherLabel': 'Idioma',
     'lang.es': 'ES',
@@ -116,8 +120,8 @@ export const messages = {
     'nav.home': 'Home',
     'nav.about': 'About',
     'nav.services': 'Services',
-    'nav.contact': 'Contact',
-    'nav.directions': 'GET DIRECTIONS',
+    'nav.location': 'Find Us',
+    'nav.directions': 'Get directions',
     'nav.openMenu': 'Open menu',
     'nav.closeMenu': 'Close menu',
 
@@ -126,7 +130,7 @@ export const messages = {
     'hero.highlight': 'at Its Best',
     'hero.subtitle':
       'Premium first-come, first-served service. Visit us today—no appointment needed.',
-    'hero.cta': 'GET DIRECTIONS (MAPS / WAZE)',
+    'hero.cta': 'Get directions (Maps / Waze)',
     'hero.hours': 'Monday to Sunday: 8:00AM - 7:00PM',
 
     // About
@@ -145,7 +149,7 @@ export const messages = {
     'services.title': 'Our Services',
     'services.intro':
       'Choose the right service for your vehicle and visit us directly',
-    'services.cta': 'VISIT US',
+    'services.cta': 'Visit us',
     'services.footer':
       'Choose your service and visit us! No reservation needed.',
 
@@ -201,7 +205,7 @@ export const messages = {
     'location.phone': '(305) 992-9248',
     'location.footer':
       'Visit us without an appointment. We serve on a first-come, first-served basis.',
-    'location.mapButton': 'VIEW LARGE MAP',
+    'location.mapButton': 'View large map',
     'location.iframeTitle': 'JMG Carwash Corp Location',
 
     // Footer
@@ -213,6 +217,10 @@ export const messages = {
     'meta.title': 'JMG Carwash Corp | Premium Car Wash',
     'meta.description':
       'JMG Carwash Corp - Premium car wash. First-come, first-served, no appointments needed. Visit us today.',
+
+    // Mobile bottom bar
+    'mobileBar.call': 'Call',
+    'mobileBar.directions': 'Directions',
 
     // Language switcher
     'lang.switcherLabel': 'Language',

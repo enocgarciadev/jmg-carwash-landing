@@ -15,7 +15,7 @@ export default function Navbar() {
       { id: 'hero', label: t('nav.home') },
       { id: 'about', label: t('nav.about') },
       { id: 'services', label: t('nav.services') },
-      { id: 'location', label: t('nav.contact') },
+      { id: 'location', label: t('nav.location') },
     ],
     [t]
   )
@@ -155,7 +155,40 @@ export default function Navbar() {
             </Button>
           </div>
 
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-2">
+            <div
+              className="flex items-center gap-1 border border-text-light/20 rounded-lg p-1"
+              role="group"
+              aria-label={t('lang.switcherLabel')}
+            >
+              <Button
+                onClick={() => setLocale('es')}
+                aria-pressed={locale === 'es'}
+                variant={locale === 'es' ? 'accent' : 'ghost'}
+                size="icon"
+                className={`h-9 w-9 min-h-[44px] min-w-[44px] text-sm font-semibold rounded ${
+                  locale === 'es'
+                    ? 'shadow-md'
+                    : 'text-text-light/70 hover:text-text-light hover:bg-text-light/10'
+                }`}
+              >
+                {t('lang.es')}
+              </Button>
+              <Button
+                onClick={() => setLocale('en')}
+                aria-pressed={locale === 'en'}
+                variant={locale === 'en' ? 'accent' : 'ghost'}
+                size="icon"
+                className={`h-9 w-9 min-h-[44px] min-w-[44px] text-sm font-semibold rounded ${
+                  locale === 'en'
+                    ? 'shadow-md'
+                    : 'text-text-light/70 hover:text-text-light hover:bg-text-light/10'
+                }`}
+              >
+                {t('lang.en')}
+              </Button>
+            </div>
+
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={

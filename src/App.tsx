@@ -6,6 +6,7 @@ import ValueProposition from './components/ValueProposition'
 import ServicesMenu from './components/ServicesMenu'
 import LocationHours from './components/LocationHours'
 import Footer from './components/Footer'
+import MobileBottomBar from './components/MobileBottomBar'
 
 function App() {
   const { locale, t } = useLanguage()
@@ -20,13 +21,14 @@ function App() {
   }, [locale, t])
 
   return (
-    <div className="min-h-screen bg-secondary">
+    <div className="min-h-screen bg-secondary pb-16 md:pb-0">
       <Navbar />
       <Hero />
       <ValueProposition />
       <ServicesMenu />
       <LocationHours />
       <Footer />
+      <MobileBottomBar />
     </div>
   )
 }
