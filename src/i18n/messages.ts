@@ -122,7 +122,7 @@ export const messages = {
     // Meta
     'meta.title': 'JMG Carwash Corp | Lavado a mano en Kendall, Miami',
     'meta.description':
-      'Lavado a mano en Kendall, Miami. Exterior · Interior · Detailing. En la gasolinera Westar, 6776 SW 117th Ave. Todos los días de 8 a. m. a 7 p. m.',
+      'Lavado a mano en Kendall, Miami. Exterior · Interior · Detailing en la Westar, 6776 SW 117th Ave. Todos los días de 8 a. m. a 7 p. m. Ven hoy, sin cita.',
 
     // Mobile bottom bar
     'mobileBar.call': 'Llamar',

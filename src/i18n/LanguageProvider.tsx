@@ -12,11 +12,11 @@ function getInitialLocale(): Locale {
     const stored = localStorage.getItem(STORAGE_KEY)
     if (stored === 'es' || stored === 'en') return stored
   } catch {
-    // Storage may be unavailable or restricted; fall back to detection.
+    // Storage may be unavailable or restricted; fall back to the default.
   }
 
-  const browser = navigator.language?.toLowerCase() ?? ''
-  if (browser.startsWith('en')) return 'en'
+  // Sin detectar por navegador: Googlebot navega en inglés y así indexaba la versión EN.
+  // El español es el idioma principal de la marca; el inglés queda en el selector.
   return DEFAULT_LOCALE
 }
 

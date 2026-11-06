@@ -8,6 +8,6 @@ export const LINKS = {
   mapsEmbed: `https://www.google.com/maps?cid=${MAPS_CID}&output=embed`,
   phone: 'tel:+13059929248',
   whatsapp: 'https://wa.me/13059929248',
-  facebook: 'https://www.facebook.com/share/1aTVouWCJw/',
+  facebook: 'https://www.facebook.com/profile.php?id=61595435576495',
   instagram: 'https://www.instagram.com/jmgcarwashmiami/',
 } as const
