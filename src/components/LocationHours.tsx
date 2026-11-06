@@ -95,6 +95,7 @@ export default function LocationHours() {
                     <div>
                       <p className="text-text-light/70 text-sm font-medium mb-1">{t('location.phoneLabel')}</p>
                       <a href={LINKS.phone} className="block text-text-light font-semibold transition-colors duration-300 hover:text-accent-bright">{t('location.phone')}</a>
+                      <a href={LINKS.phone2} className="block text-text-light font-semibold transition-colors duration-300 hover:text-accent-bright">{t('location.phone2')}</a>
                       <a
                         href={LINKS.whatsapp}
                         target="_blank"

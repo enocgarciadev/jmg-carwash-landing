@@ -1,7 +1,11 @@
 export const SUPPORTED_LOCALES = ['es', 'en'] as const
 export type Locale = (typeof SUPPORTED_LOCALES)[number]
 export const DEFAULT_LOCALE: Locale = 'es'
-export const STORAGE_KEY = 'jmg-lang'
+export const LOCALE_PATHS: Record<Locale, string> = { es: '/', en: '/en/' }
+
+export function localeFromPath(pathname: string): Locale {
+  return pathname === '/en' || pathname.startsWith('/en/') ? 'en' : DEFAULT_LOCALE
+}
 
 export const messages = {
   es: {
@@ -106,13 +110,29 @@ export const messages = {
     'location.addressLabel': 'Dirección',
     'location.address': '6776 SW 117th Ave\nMiami, FL 33183',
     'location.reference': 'En la gasolinera Westar',
-    'location.phoneLabel': 'Teléfono / WhatsApp',
+    'location.phoneLabel': 'Teléfonos',
     'location.whatsapp': 'Escríbenos por WhatsApp',
     'location.phone': '(305) 992-9248',
+    'location.phone2': '(786) 337-2240',
     'location.footer':
       'Sin cita previa. Te atendemos en orden de llegada.',
     'location.mapButton': 'Ver mapa grande',
     'location.iframeTitle': 'Ubicación JMG Carwash Corp',
+
+    // FAQ
+    'faq.title': 'Preguntas frecuentes',
+    'faq.q1': '¿Necesito cita?',
+    'faq.a1': 'No. Llegas y te atendemos en orden de llegada, todos los días de 8 a. m. a 7 p. m.',
+    'faq.q2': '¿Cuánto cuesta lavar mi carro?',
+    'faq.a2': 'Depende del tamaño: autos compactos y sedanes desde $25, SUVs desde $30, camionetas desde $35, camiones grandes desde $40 y camiones pesados o detailing desde $60.',
+    'faq.q3': '¿Dónde están?',
+    'faq.a3': 'En la gasolinera Westar de la 6776 SW 117th Ave, Miami, FL 33183, en Kendall. Cerca de Kendale Lakes, Sunset y The Hammocks.',
+    'faq.q4': '¿El lavado es a mano?',
+    'faq.a4': 'Sí. Cada carro lo lava una persona, no un túnel: exterior, interior y detailing.',
+    'faq.q5': '¿Lavan camionetas y camiones?',
+    'faq.a5': 'Sí. Lavamos desde sedanes hasta camionetas full size, camiones grandes y camiones pesados.',
+    'faq.q6': '¿Cómo los contacto?',
+    'faq.a6': 'Llámanos al (305) 992-9248 o al (786) 337-2240, o escríbenos por WhatsApp al (305) 992-9248. Te atendemos en español o en inglés.',
 
     // Footer
     'footer.tagline': 'Lavado a mano. Cuidado al detalle. · Kendall · Miami',
@@ -236,13 +256,29 @@ export const messages = {
     'location.addressLabel': 'Address',
     'location.address': '6776 SW 117th Ave\nMiami, FL 33183',
     'location.reference': 'At the Westar gas station',
-    'location.phoneLabel': 'Phone / WhatsApp',
+    'location.phoneLabel': 'Phones',
     'location.whatsapp': 'Message us on WhatsApp',
     'location.phone': '(305) 992-9248',
+    'location.phone2': '(786) 337-2240',
     'location.footer':
       'No appointment needed. First come, first served.',
     'location.mapButton': 'View large map',
     'location.iframeTitle': 'JMG Carwash Corp Location',
+
+    // FAQ
+    'faq.title': 'Frequently asked questions',
+    'faq.q1': 'Do I need an appointment?',
+    'faq.a1': 'No. Just drive in, first come, first served, every day from 8 a.m. to 7 p.m.',
+    'faq.q2': 'How much does a car wash cost?',
+    'faq.a2': 'It depends on the size: compact cars and sedans from $25, SUVs from $30, full-size trucks from $35, large trucks from $40, and heavy trucks or detailing from $60.',
+    'faq.q3': 'Where are you located?',
+    'faq.a3': 'At the Westar gas station, 6776 SW 117th Ave, Miami, FL 33183, in Kendall. Close to Kendale Lakes, Sunset and The Hammocks.',
+    'faq.q4': 'Is it a hand car wash?',
+    'faq.a4': 'Yes. Every car is washed by a person, not a tunnel: exterior, interior and detailing.',
+    'faq.q5': 'Do you wash trucks?',
+    'faq.a5': 'Yes. We wash everything from sedans to full-size pickups, large trucks and heavy trucks.',
+    'faq.q6': 'How can I reach you?',
+    'faq.a6': 'Call (305) 992-9248 or (786) 337-2240, or message us on WhatsApp at (305) 992-9248. We speak Spanish and English.',
 
     // Footer
     'footer.tagline': 'Hand washed. Detailed with care. · Kendall · Miami',

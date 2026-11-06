@@ -7,6 +7,7 @@ export const LINKS = {
   mapsListing: `https://www.google.com/maps?cid=${MAPS_CID}`,
   mapsEmbed: `https://www.google.com/maps?cid=${MAPS_CID}&output=embed`,
   phone: 'tel:+13059929248',
+  phone2: 'tel:+17863372240',
   whatsapp: 'https://wa.me/13059929248',
   facebook: 'https://www.facebook.com/profile.php?id=61595435576495',
   instagram: 'https://www.instagram.com/jmgcarwashmiami/',

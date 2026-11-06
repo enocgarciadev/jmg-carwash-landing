@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import ValueProposition from './components/ValueProposition'
 import WorkGallery from './components/WorkGallery'
 import ServicesMenu from './components/ServicesMenu'
+import Faq from './components/Faq'
 import LocationHours from './components/LocationHours'
 import Footer from './components/Footer'
 import MobileBottomBar from './components/MobileBottomBar'
@@ -28,6 +29,7 @@ function App() {
       <ValueProposition />
       <WorkGallery />
       <ServicesMenu />
+      <Faq />
       <LocationHours />
       <Footer />
       <MobileBottomBar />
