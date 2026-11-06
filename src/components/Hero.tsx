@@ -1,64 +1,77 @@
-import { MapPin, Navigation } from 'lucide-react'
+import { Navigation, MessageCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
+import { LINKS } from '@/lib/links'
 import { useLanguage } from '../i18n/useLanguage'
 
+// Misma composición que las portadas de Google y Facebook (Penpot): panel claro + foto con línea de marca cyan
 export default function Hero() {
   const { t } = useLanguage()
 
   return (
     <section
       id="hero"
-      className="relative min-h-svh md:min-h-screen max-h-svh md:max-h-none flex items-center justify-center overflow-hidden"
+      className="bg-secondary pt-16 md:pt-20 grid md:grid-cols-2 md:min-h-[min(100svh,860px)]"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/70 to-primary/90 z-10" />
-      
-      {/* Hero LCP image: keep srcSet/sizes in sync with the preload link in index.html */}
-      <img
-        src="/images/hero-1920.webp"
-        srcSet="/images/hero-640.webp 640w, /images/hero-1280.webp 1280w, /images/hero-1920.webp 1920w"
-        sizes="100vw"
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover object-center animate-pulse-slow z-0"
-        fetchPriority="high"
-        loading="eager"
-        decoding="async"
-        width="1920"
-        height="1280"
-      />
+      <div className="flex items-center md:justify-end px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+        <div className="w-full max-w-xl md:max-w-[608px] md:pr-8 lg:pr-12 animate-fade-in-up">
+          <div className="w-[60px] h-[5px] bg-accent-bright mb-5" aria-hidden="true" />
+          <p className="text-accent text-sm md:text-base font-semibold uppercase tracking-wider mb-3">
+            {t('hero.label')}
+          </p>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-[1.1] mb-5">
+            {t('hero.title')}
+            <br />
+            {t('hero.highlight')}
+          </h1>
+          <p className="text-lg text-text-muted mb-6">{t('hero.subtitle')}</p>
 
-      <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-text-light leading-[1.1] mb-6 animate-fade-in-up">
-          {t('hero.title')}
-          <br />
-          <span className="text-accent">{t('hero.highlight')}</span>
-        </h1>
-        
-        <p className="text-base sm:text-lg text-text-light/90 mb-4 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          {t('hero.subtitle')}
-        </p>
+          <Separator className="bg-line mb-6" />
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <Button
-            variant="accent"
-            size="lg"
-            asChild
-            className="px-8 py-4 h-auto text-lg font-bold rounded-xl gap-2 group"
-          >
-            <a
-              href="https://www.google.com/maps/dir/?api=1&destination=6776+SW+117th+Ave%2C+Miami%2C+FL+33183"
-              target="_blank"
-              rel="noopener noreferrer"
+          <p className="text-lg md:text-xl font-semibold text-primary">{t('hero.address')}</p>
+          <p className="text-text-muted mt-1">{t('hero.hours')}</p>
+
+          <div className="flex flex-col sm:flex-row gap-3 mt-8">
+            <Button
+              variant="accent"
+              size="lg"
+              asChild
+              className="px-7 py-4 h-auto text-base font-bold rounded-xl gap-2 group"
             >
-              <Navigation className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" />
-              {t('hero.cta')}
-            </a>
-          </Button>
+              <a href={LINKS.directions} target="_blank" rel="noopener noreferrer">
+                <Navigation className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" />
+                {t('hero.cta')}
+              </a>
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              asChild
+              className="px-7 py-4 h-auto text-base font-semibold rounded-xl gap-2 border-primary/20 text-primary hover:bg-primary/5"
+            >
+              <a href={LINKS.whatsapp} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-5 h-5" />
+                {t('hero.whatsapp')}
+              </a>
+            </Button>
+          </div>
         </div>
+      </div>
 
-        <div className="mt-12 flex items-center justify-center gap-2 text-text-light/70 text-sm animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-          <MapPin className="w-4 h-4" />
-          <span>{t('hero.hours')}</span>
-        </div>
+      {/* LCP: mantener srcSet/sizes sincronizados con el preload de index.html */}
+      <div className="relative min-h-[320px] border-t-[6px] md:border-t-0 md:border-l-[6px] border-accent-bright overflow-hidden">
+        <img
+          src="/images/local-1000.webp"
+          srcSet="/images/local-640.webp 640w, /images/local-1000.webp 1000w, /images/local-1200.webp 1200w"
+          sizes="(min-width: 768px) 50vw, 100vw"
+          alt={t('hero.photoAlt')}
+          className="absolute inset-0 w-full h-full object-cover object-[50%_55%]"
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
+          width="1200"
+          height="1600"
+        />
       </div>
     </section>
   )

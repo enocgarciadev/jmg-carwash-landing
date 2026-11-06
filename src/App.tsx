@@ -3,6 +3,7 @@ import { useLanguage } from './i18n/useLanguage'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ValueProposition from './components/ValueProposition'
+import WorkGallery from './components/WorkGallery'
 import ServicesMenu from './components/ServicesMenu'
 import LocationHours from './components/LocationHours'
 import Footer from './components/Footer'
@@ -25,6 +26,7 @@ function App() {
       <Navbar />
       <Hero />
       <ValueProposition />
+      <WorkGallery />
       <ServicesMenu />
       <LocationHours />
       <Footer />

@@ -1,5 +1,6 @@
 import { Phone, Navigation } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { LINKS } from '@/lib/links'
 import { useLanguage } from '../i18n/useLanguage'
 
 export default function MobileBottomBar() {
@@ -17,7 +18,7 @@ export default function MobileBottomBar() {
           asChild
           className="flex-1 h-12 text-sm font-semibold rounded-xl gap-2"
         >
-          <a href="tel:+13059929248">
+          <a href={LINKS.phone}>
             <Phone className="w-5 h-5" />
             {t('mobileBar.call')}
           </a>
@@ -29,7 +30,7 @@ export default function MobileBottomBar() {
           className="flex-1 h-12 text-sm font-semibold rounded-xl gap-2"
         >
           <a
-            href="https://www.google.com/maps/dir/?api=1&destination=6776+SW+117th+Ave%2C+Miami%2C+FL+33183"
+            href={LINKS.directions}
             target="_blank"
             rel="noopener noreferrer"
           >

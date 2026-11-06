@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { MapPin, Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
+import { LINKS } from '@/lib/links'
 import { useLanguage } from '../i18n/useLanguage'
 
 export default function Navbar() {
@@ -14,6 +15,7 @@ export default function Navbar() {
     () => [
       { id: 'hero', label: t('nav.home') },
       { id: 'about', label: t('nav.about') },
+      { id: 'work', label: t('nav.work') },
       { id: 'services', label: t('nav.services') },
       { id: 'location', label: t('nav.location') },
     ],
@@ -68,29 +70,32 @@ export default function Navbar() {
   }
 
   const desktopLinkBase =
-    'relative text-sm font-medium transition-all duration-300 cursor-pointer py-2 after:content-[""] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:text-text-light hover:after:w-full active:scale-[0.97]'
-  const desktopLinkActive = 'text-accent after:w-full'
+    'relative text-sm font-medium transition-all duration-300 cursor-pointer py-2 after:content-[""] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:bg-accent-bright after:transition-all after:duration-300 hover:text-text-light hover:after:w-full active:scale-[0.97]'
+  const desktopLinkActive = 'text-accent-bright after:w-full'
   const desktopLinkInactive = 'text-text-light/90 after:w-0'
 
   const mobileLinkBase =
     'block w-full text-left text-2xl font-semibold py-4 px-3 min-h-[44px] transition-all duration-300 rounded-lg active:scale-[0.97]'
-  const mobileLinkActive = 'text-accent bg-text-light/5 relative'
+  const mobileLinkActive = 'text-accent-bright bg-text-light/5 relative'
   const mobileLinkInactive = 'text-text-light/90 hover:text-text-light hover:bg-text-light/5'
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
-        isScrolled
-          ? 'bg-primary/95 backdrop-blur-md shadow-lg shadow-primary/20'
-          : 'bg-transparent'
-      }`}
+        isScrolled ? 'shadow-lg shadow-primary/20' : ''
+      } bg-primary`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex-shrink-0 cursor-pointer hover:opacity-90 transition-opacity duration-300">
-            <span className="text-text-light font-bold text-lg md:text-xl tracking-wide">
-              JMG CARWASH CORP
-            </span>
+            {/* Manual: tamaño mínimo digital 160 px de ancho */}
+            <img
+              src="/logo-jmg-reverso.svg"
+              alt="JMG Carwash Corp"
+              width="160"
+              height="41"
+              className="w-[160px] md:w-[190px] h-auto"
+            />
           </div>
 
           <div className="hidden md:flex items-center space-x-6">
@@ -145,7 +150,7 @@ export default function Navbar() {
               className="px-5 py-2.5 h-auto text-sm font-semibold rounded-lg gap-2"
             >
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=6776+SW+117th+Ave%2C+Miami%2C+FL+33183"
+                href={LINKS.directions}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -237,7 +242,7 @@ export default function Navbar() {
                 }`}
               >
                 <span
-                  className={`w-1.5 h-1.5 rounded-full bg-accent mr-3 transition-opacity ${
+                  className={`w-1.5 h-1.5 rounded-full bg-accent-bright mr-3 transition-opacity ${
                     activeSection === id ? 'opacity-100' : 'opacity-0'
                   }`}
                   aria-hidden="true"
@@ -286,7 +291,7 @@ export default function Navbar() {
               className="w-full px-6 py-4 h-auto text-lg font-semibold rounded-xl gap-2"
             >
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=6776+SW+117th+Ave%2C+Miami%2C+FL+33183"
+                href={LINKS.directions}
                 target="_blank"
                 rel="noopener noreferrer"
               >

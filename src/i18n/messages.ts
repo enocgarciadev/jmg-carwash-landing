@@ -7,7 +7,8 @@ export const messages = {
   es: {
     // Nav
     'nav.home': 'Inicio',
-    'nav.about': 'Acerca de',
+    'nav.about': 'Nosotros',
+    'nav.work': 'Trabajos',
     'nav.services': 'Servicios',
     'nav.location': 'Ubicación',
     'nav.directions': 'Cómo llegar',
@@ -15,31 +16,46 @@ export const messages = {
     'nav.closeMenu': 'Cerrar menú',
 
     // Hero
-    'hero.title': 'Cuidado Automotriz',
-    'hero.highlight': 'de Nivel Superior',
+    'hero.label': 'Kendall · Miami',
+    'hero.title': 'Lavado a mano.',
+    'hero.highlight': 'Cuidado al detalle.',
     'hero.subtitle':
-      'Atención premium en orden de llegada. Visítanos hoy mismo sin necesidad de cita previa.',
-    'hero.cta': 'Cómo llegar (Maps / Waze)',
-    'hero.hours': 'Lunes a Domingo: 8:00AM - 7:00PM',
+      'Exterior · Interior · Detailing. Llegas, dejas el carro y te vas tranquilo.',
+    'hero.cta': 'Cómo llegar',
+    'hero.address': '6776 SW 117th Ave · En la Westar',
+    'hero.hours': 'Todos los días · 8 a. m. – 7 p. m.',
+    'hero.whatsapp': 'Escríbenos',
+    'hero.photoAlt': 'Carro negro recién lavado a mano en JMG Carwash Corp',
+
+    // Work gallery
+    'work.title': 'Nuestro trabajo',
+    'work.intro': 'Fotos reales del local. El carro terminado habla por nosotros.',
+    'work.photo1': 'Lavado y secado a mano',
+    'work.photo2': 'Rines al detalle',
+    'work.photo3': 'Interior: aspirado, tablero y vidrios',
+    'work.more': 'Ver más en Instagram @jmgcarwashmiami',
 
     // About
-    'about.title': 'Comprometidos con la Perfección',
-    'about.benefit1.title': 'Sin Citas Previas',
+    'about.title': 'Así trabajamos',
+    'about.benefit1.title': 'A mano',
     'about.benefit1.description':
-      'Llegas con tu vehículo, te acomodas y te atendemos de inmediato en orden de llegada.',
-    'about.benefit2.title': 'Instalaciones de Primera',
+      'Cada carro lo lava una persona, no un túnel.',
+    'about.benefit2.title': 'Al detalle',
     'about.benefit2.description':
-      'Disfruta de un área de espera cómoda y acondicionada mientras consentimos tu auto.',
-    'about.benefit3.title': 'Rapidez y Eficiencia',
+      'Rines, vidrios, tapicería y acabados. Lo ves al recoger tu carro.',
+    'about.benefit3.title': 'Cercano',
     'about.benefit3.description':
-      'Procesos optimizados por expertos para cuidar tu tiempo sin descuidar el detalle.',
+      'Negocio familiar, trato directo, en español o en inglés.',
+    'about.benefit4.title': 'Fácil de encontrar',
+    'about.benefit4.description':
+      'En la gasolinera Westar de la 117 Ave. Sin cita: llegas y te atendemos.',
 
     // Services
-    'services.title': 'Nuestros Servicios',
+    'services.title': 'Servicios',
     'services.intro':
-      'Selecciona el servicio ideal para tu vehículo y visítanos directamente',
-    'services.cta': 'Visítanos',
-    'services.footer': '¡Elige tu servicio y visítanos! No necesitas reservar.',
+      'Exterior · Interior · Detailing. El precio depende del tamaño de tu vehículo.',
+    'services.cta': 'Ver ubicación',
+    'services.footer': 'No necesitas cita. Ven hoy, te atendemos en orden de llegada.',
 
     'services.compact.name': 'Autos Compactos / Sedán',
     'services.compact.price': 'Desde $25',
@@ -81,30 +97,32 @@ export const messages = {
     'services.detailing.feature0': 'Limpieza profunda exterior',
     'services.detailing.feature1': 'Limpieza interior detallada',
     'services.detailing.feature2': 'Protección de plásticos y cuero',
-    'services.detailing.feature3': 'Brillo y acabado premium',
+    'services.detailing.feature3': 'Brillo y acabado final',
 
     // Location
-    'location.title': 'Encuéntranos Ahora',
-    'location.hoursLabel': 'Horario de Atención',
-    'location.hours': 'Lunes a Domingo: 8:00AM - 7:00PM',
+    'location.title': 'Dónde estamos',
+    'location.hoursLabel': 'Horario',
+    'location.hours': 'Todos los días · 8 a. m. – 7 p. m.',
     'location.addressLabel': 'Dirección',
-    'location.address': '6776 SW 117th Ave.\nMiami, FL 33183',
-    'location.phoneLabel': 'Teléfono',
+    'location.address': '6776 SW 117th Ave\nMiami, FL 33183',
+    'location.reference': 'En la gasolinera Westar',
+    'location.phoneLabel': 'Teléfono / WhatsApp',
+    'location.whatsapp': 'Escríbenos por WhatsApp',
     'location.phone': '(305) 992-9248',
     'location.footer':
-      'Visítanos sin cita previa. Te atendemos en orden de llegada.',
+      'Sin cita previa. Te atendemos en orden de llegada.',
     'location.mapButton': 'Ver mapa grande',
     'location.iframeTitle': 'Ubicación JMG Carwash Corp',
 
     // Footer
-    'footer.tagline': 'Cuidado automotriz premium desde 2020',
+    'footer.tagline': 'Lavado a mano. Cuidado al detalle. · Kendall · Miami',
     'footer.copyright':
       '© {year} JMG Carwash Corp. Todos los derechos reservados.',
 
     // Meta
-    'meta.title': 'JMG Carwash Corp | Lavado de Autos Premium',
+    'meta.title': 'JMG Carwash Corp | Lavado a mano en Kendall, Miami',
     'meta.description':
-      'JMG Carwash Corp - Lavado de autos premium. Atención en orden de llegada, sin citas previas. Visítanos hoy mismo.',
+      'Lavado a mano en Kendall, Miami. Exterior · Interior · Detailing. En la gasolinera Westar, 6776 SW 117th Ave. Todos los días de 8 a. m. a 7 p. m.',
 
     // Mobile bottom bar
     'mobileBar.call': 'Llamar',
@@ -119,6 +137,7 @@ export const messages = {
     // Nav
     'nav.home': 'Home',
     'nav.about': 'About',
+    'nav.work': 'Our work',
     'nav.services': 'Services',
     'nav.location': 'Find Us',
     'nav.directions': 'Get directions',
@@ -126,32 +145,47 @@ export const messages = {
     'nav.closeMenu': 'Close menu',
 
     // Hero
-    'hero.title': 'Premium Car Care',
-    'hero.highlight': 'at Its Best',
+    'hero.label': 'Kendall · Miami',
+    'hero.title': 'Hand washed.',
+    'hero.highlight': 'Detailed with care.',
     'hero.subtitle':
-      'Premium first-come, first-served service. Visit us today—no appointment needed.',
-    'hero.cta': 'Get directions (Maps / Waze)',
-    'hero.hours': 'Monday to Sunday: 8:00AM - 7:00PM',
+      'Exterior · Interior · Detailing. Drop off your car and relax.',
+    'hero.cta': 'Get directions',
+    'hero.address': '6776 SW 117th Ave · At the Westar',
+    'hero.hours': 'Every day · 8 a.m. – 7 p.m.',
+    'hero.whatsapp': 'Message us',
+    'hero.photoAlt': 'Black car freshly hand washed at JMG Carwash Corp',
+
+    // Work gallery
+    'work.title': 'Our work',
+    'work.intro': 'Real photos from our location. A finished car speaks for itself.',
+    'work.photo1': 'Hand washed and dried',
+    'work.photo2': 'Rims, detailed',
+    'work.photo3': 'Interior: vacuum, dashboard and windows',
+    'work.more': 'See more on Instagram @jmgcarwashmiami',
 
     // About
-    'about.title': 'Committed to Excellence',
-    'about.benefit1.title': 'No Appointments Needed',
+    'about.title': 'How we work',
+    'about.benefit1.title': 'By hand',
     'about.benefit1.description':
-      'Bring your vehicle, get comfortable, and we will serve you right away on a first-come, first-served basis.',
-    'about.benefit2.title': 'First-Class Facilities',
+      'Every car is washed by a person, not a tunnel.',
+    'about.benefit2.title': 'Attention to detail',
     'about.benefit2.description':
-      'Enjoy a comfortable, climate-controlled waiting area while we pamper your car.',
-    'about.benefit3.title': 'Speed and Efficiency',
+      'Rims, windows, upholstery and trim. You see it when you pick up your car.',
+    'about.benefit3.title': 'Friendly',
     'about.benefit3.description':
-      'Expert-optimized processes that respect your time without missing a single detail.',
+      'Family business, direct service, in Spanish or English.',
+    'about.benefit4.title': 'Easy to find',
+    'about.benefit4.description':
+      'At the Westar gas station on 117th Ave. No appointment: just drive in.',
 
     // Services
-    'services.title': 'Our Services',
+    'services.title': 'Services',
     'services.intro':
-      'Choose the right service for your vehicle and visit us directly',
-    'services.cta': 'Visit us',
+      'Exterior · Interior · Detailing. Price depends on the size of your vehicle.',
+    'services.cta': 'See location',
     'services.footer':
-      'Choose your service and visit us! No reservation needed.',
+      'No appointment needed. Come by today, first come, first served.',
 
     'services.compact.name': 'Compact Cars / Sedan',
     'services.compact.price': 'From $25',
@@ -193,30 +227,32 @@ export const messages = {
     'services.detailing.feature0': 'Deep exterior cleaning',
     'services.detailing.feature1': 'Detailed interior cleaning',
     'services.detailing.feature2': 'Plastic and leather protection',
-    'services.detailing.feature3': 'Premium shine and finish',
+    'services.detailing.feature3': 'Final shine and finish',
 
     // Location
-    'location.title': 'Find Us Now',
-    'location.hoursLabel': 'Opening Hours',
-    'location.hours': 'Monday to Sunday: 8:00AM - 7:00PM',
+    'location.title': 'Where we are',
+    'location.hoursLabel': 'Hours',
+    'location.hours': 'Every day · 8 a.m. – 7 p.m.',
     'location.addressLabel': 'Address',
-    'location.address': '6776 SW 117th Ave.\nMiami, FL 33183',
-    'location.phoneLabel': 'Phone',
+    'location.address': '6776 SW 117th Ave\nMiami, FL 33183',
+    'location.reference': 'At the Westar gas station',
+    'location.phoneLabel': 'Phone / WhatsApp',
+    'location.whatsapp': 'Message us on WhatsApp',
     'location.phone': '(305) 992-9248',
     'location.footer':
-      'Visit us without an appointment. We serve on a first-come, first-served basis.',
+      'No appointment needed. First come, first served.',
     'location.mapButton': 'View large map',
     'location.iframeTitle': 'JMG Carwash Corp Location',
 
     // Footer
-    'footer.tagline': 'Premium car care since 2020',
+    'footer.tagline': 'Hand washed. Detailed with care. · Kendall · Miami',
     'footer.copyright':
       '© {year} JMG Carwash Corp. All rights reserved.',
 
     // Meta
-    'meta.title': 'JMG Carwash Corp | Premium Car Wash',
+    'meta.title': 'JMG Carwash Corp | Hand Car Wash in Kendall, Miami',
     'meta.description':
-      'JMG Carwash Corp - Premium car wash. First-come, first-served, no appointments needed. Visit us today.',
+      'Hand car wash in Kendall, Miami. Exterior · Interior · Detailing. At the Westar gas station, 6776 SW 117th Ave. Every day 8 a.m. – 7 p.m.',
 
     // Mobile bottom bar
     'mobileBar.call': 'Call',
